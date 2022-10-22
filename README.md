@@ -1,9 +1,4 @@
 # SDAN-for-Rain-Removal (SSDRNet)
-If you find this github useful in your research, please consider citing:
-
-"Sequential Dual Attention Network for Rain Streak Removal in a Single Image"
-
-C. -Y. Lin, Z. Tao, A. -S. Xu, L. -W. Kang and F. Akhyar, "Sequential Dual Attention Network for Rain Streak Removal in a Single Image," in IEEE Transactions on Image Processing, vol. 29, pp. 9250-9265, 2020, doi: 10.1109/TIP.2020.3025402
 
 Paper: https://ieeexplore.ieee.org/document/9206069
 
@@ -32,33 +27,49 @@ https://drive.google.com/drive/folders/1zRda-AqxrimzpPvleFHYtYM2rykNNZ-s?usp=sha
 8. tensorboardX
 
 ## How to run
-Run "bash test.sh" or following comments:
-- Rain100L:
-python test.py --logdir logs/Rain100L/ --save_path results/Rain100L/ --data_path datasets/test/Rain100L/rainy_images/
+We Tested in Colab 
 
-- Rain100H:
-python test.py --logdir logs/Rain100H/ --save_path results/Rain100H/ --data_path datasets/test/Rain100H/rainy_images/
+#Mount
+from google.colab import drive
+drive.mount('/content/drive’)
+		 
+#Set dir		 
+import os
+os.chdir('/content/drive/MyDrive/code/SDAN-for-Rain-Removal’)
 
-- Rain12:
-python test.py --logdir logs/Rain100L/ --save_path results/Rain12/ --data_path datasets/test/Rain12/rainy_images/
+#install 
+!pip3 install -r requirements.txt
+!sudo apt-get install python-matplotlib python-numpy python-pil python-scipy
+!sudo apt-get install build-essential cython
+!sudo apt-get install python-skimage
+!python3 -m pip install scikit-image --upgrade
 
-- RainLight:
-python test.py --logdir logs/RainLight/ --save_path results/RainLight/ --data_path datasets/test/RainLightTest/rainy_images/
+#Rain100L
+!python3 test.py --logdir logs/Rain100L/ --save_path results/Rain100L/ --data_path datasets/test/Rain100L/rainy_images/
 
-- RainHeavy:
-python test.py --logdir logs/RainHeavy/ --save_path results/RainHeavy/ --data_path datasets/test/RainHeavyTest/rainy_images/
+#Rain100H
+!python3 test.py --logdir logs/Rain100H/ --save_path results/Rain100H/ --data_path datasets/test/Rain100H/rainy_images/
 
-- RainDDN:
-python test.py --logdir logs/RainTrainDDN/ --save_path results/DDN/ --data_path datasets/test/DDNTest/rainy_images/
+#Rain12 
+!python3 test.py --logdir logs/Rain100L/ --save_path results/Rain12/ --data_path datasets/test/Rain12/rainy_images/
 
-- RainDID:
-python test.py --logdir logs/RainTrainDID/ --save_path results/DID/ --data_path datasets/test/DIDTest/rainy_images/
+#RainLight 
+!python3 test.py --logdir logs/RainLight/ --save_path results/RainLight/ --data_path datasets/test/RainLightTest/rainy_images/
 
-- Real_finetune:
-python test.py --logdir logs/Real/finetune/ --save_path results/Real/finetune/ --data_path datasets/test/Real/rainy_images/
+#RainHeavy 
+!python3 test.py --logdir logs/RainHeavy/ --save_path results/RainHeavy/ --data_path datasets/test/RainHeavyTest/rainy_images/
 
-- Real_no_finetune:
-python test.py --logdir logs/Real/no_finetune/ --save_path results/Real/no_finetune/ --data_path datasets/test/Real/rainy_images/
+#RainDDN 
+!python3 test.py --logdir logs/RainTrainDDN/ --save_path results/DDN/ --data_path datasets/test/DDNTest/rainy_images/
+
+#RainDID 
+!python3 test.py --logdir logs/RainTrainDID/ --save_path results/DID/ --data_path datasets/test/DIDTest/rainy_images/
+
+#Real_finetune 
+!python3 test.py --logdir logs/Real/finetune/ --save_path results/Real/finetune/ --data_path datasets/test/Real/rainy_images/
+
+#Real_no_finetune 
+!python3 test.py --logdir logs/Real/no_finetune/ --save_path results/Real/no_finetune/ --data_path datasets/test/Real/rainy_images/
 
 ## Testing results
 All testing results of our model also available at:
